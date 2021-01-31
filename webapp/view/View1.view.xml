@@ -7,7 +7,7 @@
 			<pages>
 				<Page id="page" title="{i18n>homePageTitle}">
 					<content>
-                        <mvc:XMLView viewName="crmo.walkthrough4.view.View1Panel1"/>
+                        <mvc:XMLView viewName="crmo.walkthrough4.view.View1Panel123"/>
                     </content>
 				</Page>
 			</pages>
