@@ -1,3 +1,4 @@
+// @ts-ignore
 sap.ui.define([
         "sap/ui/core/mvc/Controller",
         "sap/m/MessageToast",
@@ -21,30 +22,9 @@ sap.ui.define([
                 MessageToast.show(sMsg)
             },
         
-            onOpenDialog : function () {
-			    var oView = this.getView();
-			    // create dialog lazily
-			    if (!this.pDialog) {
-				    this.pDialog = Fragment.load({
-					    id: oView.getId(),
-                        name: "crmo.walkthrough4.view.ViewHelloDialogF",
-                        controller: this
-				    }).then(function (oDialog) {
-					// connect dialog to the root view of this component (models, lifecycle)
-					oView.addDependent(oDialog);
-					return oDialog;
-				    });
-			    } 
-			    this.pDialog.then(function(oDialog) {
-				    oDialog.open();
-			    });
-            },
-        
-		    onCloseDialog : function () {
-			    // note: We don't need to chain to the pDialog promise, since this event-handler
-			    // is only called from within the loaded dialog itself.
-			    this.byId("helloDialog").close();
-		    }            
+		onOpenDialog : function () {
+			this.getOwnerComponent().openHelloDialog();
+		}           
 
 		});
 	});
