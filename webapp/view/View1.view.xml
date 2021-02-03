@@ -14,6 +14,7 @@
 					</headerContent>
 					<content>
                         <mvc:XMLView viewName="crmo.walkthrough4.view.View1Panel1"/>
+                        <mvc:XMLView viewName="crmo.walkthrough4.view.InvoiceList"/>
                     </content>
 				</Page>
 			</pages>
